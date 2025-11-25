@@ -12,13 +12,14 @@
             'VCCLCompilerTool': {
               'AdditionalOptions': [
                 '/guard:cf',
-                '/w34244',
-                '/we4267',
+                '/sdl',
+                '/W3',
                 '/ZH:SHA_256'
               ]
             },
             'VCLinkerTool': {
               'AdditionalOptions': [
+                '/DYNAMICBASE',
                 '/guard:cf'
               ]
             }
@@ -76,7 +77,7 @@
           'libraries': [
             '-lutil'
           ],
-          'cflags': ['-Wall'],
+          'cflags': ['-Wall', '-O2', '-D_FORTIFY_SOURCE=2'],
           'conditions': [
             # http://www.gnu.org/software/gnulib/manual/html_node/forkpty.html
             #   One some systems (at least including Cygwin, Interix,
